@@ -1,0 +1,59 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    10:02:35 11/13/2025 
+// Design Name: 
+// Module Name:    IFU 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module IFU(
+    input [31:0] GRF,
+    input [25:0] imm26,
+    input [15:0] imm16,
+    input [1:0] select,
+    input zero,
+    input PC_en,
+    input clk,
+    input Req,
+    input reset,
+    input [5:0] D_type,
+    input [31:0] EPC,
+    output [31:0] F_PC,
+    output [31:0] F_PCplus8
+    );
+
+    wire [31:0] nextPC;
+    wire [31:0] F_originPC;
+
+    pc ProgramCounter(.clk(clk),
+          .reset(reset),
+          .PC_en(PC_en),
+          .nextPC(nextPC),
+          .PC(F_originPC));
+
+    nextPC nPC(.F_PC(F_PC),
+               .GRF(GRF),
+               .imm26(imm26),
+               .imm16(imm16),
+               .zero(zero),
+               .Req(Req),
+               .nextPC_Sel(select),
+               .nextPC(nextPC));
+
+    assign F_PC = (D_type == 6'b100101) ? EPC : F_originPC;
+
+    assign F_PCplus8 = F_PC + 32'h00000008;
+
+endmodule
