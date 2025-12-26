@@ -1,6 +1,9 @@
 # BUAA-CO-2025
 ## 项目介绍
 北京航空航天大学6系2025年计算机组成实验部分课下代码，核心目标为开发一个支持中断异常的五级流水线CPU。
+## 支持指令
+本CPU支持如下指令：  
+`nop` `add` `addi` `sub` `xori` `and` `andi` `or` `ori` `slt` `sltu` `sll` `sllv` `lui` `lw` `lh` `lb` `sw` `sh` `sb` `beq` `bne` `j` `jal` `jr` `jalr` `mult` `multu` `div` `divu` `mfhi` `mflo` `mthi` `mtlo` `mfc0` `mtc0` `eret` `syscall(仅陷入内核)`
 ## 项目结构
 1. Pre：预习，Logisim、Verilog、Mips各一道题。
 2. P0: Logisim，重点在于FSM（有限状态机）。
