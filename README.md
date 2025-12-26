@@ -19,5 +19,7 @@
 1. 自P5开始，抛弃了ISE，使用iVerilog+GTKWave，因此你会看到`Makefile` `wave.vcd` `wave`三个文件，详情配置方法请[点击这里](https://michsong.com/posts/co/verilog环境搭建-iverilog+gtkwave/)
 2. 在后面的代码中存在部分测试代码，但不能保证所有的测试代码均为合法的测试代码；以及，这一版本我不能百分百确认是最终提交的正确代码，如有问题，欢迎issue。
 3. 另外，请不要原封不动提交我的代码，谨防查重。
+## 计组日记
+![计组日记](image/CODiary.jpg)
 ## 最后
-向大家介绍我的个人博客[michsong.com](michsong.com),不定期更新，欢迎来看！
+向大家介绍我的个人博客[michsong.com](https://michsong.com)，不定期更新，欢迎来看！
